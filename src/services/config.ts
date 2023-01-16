@@ -10,7 +10,7 @@ export const SelectLabelAsyncPrimaryColor = '#FDA227';
 export const SelectLabelAsyncDisabledColor = '#CCCCCC';
 export const SelectLabelAsyncSecondaryColor = '#FFFFFF';
 
-export type DataType = 'DadosFixos' | 'Exemplo';
+export type DataType = 'DadosFixos' | 'Estado' | 'Exemplo';
 
 export const RequestTypeArray: RequestType[] = [
     {
@@ -21,6 +21,15 @@ export const RequestTypeArray: RequestType[] = [
         fieldValueLowerCase: 'fieldValueLowerCase',
         fieldLabelLowerCase: 'fieldLabelLowerCase',
         url: '/OData/Exemplo?$filter=contains(toupper(nome),toupper(\'selectedValue\'))',
+    },
+    {
+        useOdata: true,
+        type: 'Estado',
+        fieldValue: 'Id',
+        fieldLabel: 'Nome',
+        fieldValueLowerCase: 'id',
+        fieldLabelLowerCase: 'nome',
+        url: '/OData/Estado?$filter=contains(toupper(nome),toupper(\'selectedValue\'))',
     },
 ];
 
@@ -50,6 +59,11 @@ export function montarMenus(token: string, administrador: boolean): Menu {
     item.subItens.push({
         nome: 'Estado',
         link: '/estado',
+    });
+
+    item.subItens.push({
+        nome: 'Cidade',
+        link: '/cidade',
     });
 
     menus.items.push(item);
