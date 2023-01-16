@@ -55,6 +55,12 @@ export interface Estado {
     uf: string;
 }
 
+export interface Cidade {
+    id: string;
+    nome: string;
+    idEstado: string;
+}
+
 /* Navegação */
 
 interface Listagem {

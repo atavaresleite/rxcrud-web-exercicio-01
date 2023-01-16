@@ -15,6 +15,10 @@ import EstadoListagem from './view/estado/listagem';
 import EstadoCadastro from './view/estado/cadastro';
 import EstadoExclusao from './view/estado/exclusao';
 
+import CidadeListagem from './view/cidade/listagem';
+import CidadeCadastro from './view/cidade/cadastro';
+import CidadeExclusao from './view/cidade/exclusao';
+
 function App() {
   return (
     <Provider store={store}>
@@ -40,6 +44,14 @@ function App() {
             <Route path='/estado/editar/:id' component={EstadoCadastro} />
             <Route path='/estado/visualizar/:id/:action' component={EstadoCadastro} />
             <Route path='/estado/exclusao/:id' component={EstadoExclusao} />
+
+            <Route exact path='/cidade' component={CidadeListagem} />
+            <Route path='/cidade/pagina/:pagina' component={CidadeListagem} />
+            <Route exact path='/cidade/novo' component={CidadeCadastro} />
+            <Route path='/cidade/editar/:id' component={CidadeCadastro} />
+            <Route path='/cidade/visualizar/:id/:action' component={CidadeCadastro} />
+            <Route path='/cidade/exclusao/:id' component={CidadeExclusao} />
+
 
             <Route path='*' component={PageNotFound} />
           </Switch>
