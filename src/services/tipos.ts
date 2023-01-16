@@ -49,6 +49,12 @@ export interface Perfil {
     nome: string;
 }
 
+export interface Estado {
+    id: string;
+    nome: string;
+    uf: string;
+}
+
 /* Navegação */
 
 interface Listagem {
